@@ -7,7 +7,7 @@ body {
 
 header {
     background-color: #352F44;
-    height: 10vh;
+    height:auto;
 }
 
 main {
@@ -23,5 +23,16 @@ footer {
 
 .home_page_img {
     height: 20vh;
+}
+
+/* Eten.html start hier met editen */
+#eten-logo{
+    width:250px;
+    height:auto;
+    padding:1vh 2vw;
+}
+#container-eten{
+    display:flex;
+    flex-direction: column;
 }
 
