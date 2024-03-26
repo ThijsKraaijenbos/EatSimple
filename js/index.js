@@ -4,3 +4,5 @@ window.addEventListener("load", () => init())
 const init = () => {
     console.log("Alle elementen zijn geladen")
 }
+
+
