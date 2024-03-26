@@ -4,16 +4,12 @@ function orderFood()
 {
     return [
         0 =>
+
             [
-                "id" => 0,
-                "name" => "food",
-                "image" => "food.jpg"
-            ],
-        [
-            "id" => 1,
-            "type" => "Drinks",
-            "image" => "drinks.jpg"
-        ]
+                "id" => 1,
+                "type" => "Drinks",
+                "image" => "drinks.jpg"
+            ]
     ];
 }
 
