@@ -4,7 +4,6 @@ function orderFood()
 {
     return [
         0 =>
-
             [
                 "id" => 1,
                 "type" => "Drinks",
