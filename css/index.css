@@ -20,7 +20,7 @@ header {
 
 footer {
     background-color: #352F44;
-    height: 10vh;
+    height: 11vh;
 }
 
 .home_page_img {
@@ -40,8 +40,35 @@ footer {
     height:auto;
     padding:1vh 2vw;
 }
-#container-eten{
+#eten-main h1{
+    font-family: "Vujahday Script", cursive;
+    letter-spacing: 5px;
+    font-size: 5rem;
+    margin:0;
+}
+#eten-main{
     display:flex;
     flex-direction: column;
+    align-items: center;
+    padding: 10vh 0vw;
+}
+#container-eten{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:15vw;
+}
+article{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5vh;
+}
+article img{
+    width:250px;
+    height:auto;
+}
+article button{
+    font-size: 3rem;
+    width:100%;
 }
 
