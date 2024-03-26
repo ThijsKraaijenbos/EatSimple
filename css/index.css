@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #B9B4C7;
+}
+
+header {
+    background-color: #352F44;
+    height: 10vh;
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #352F44;
+    height: 10vh;
+}
+
+.home_page_img {
+    height: 20vh;
+}
+
