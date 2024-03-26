@@ -1,13 +1,25 @@
+/* algemene dingen voor elke pagina */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #B9B4C7;
+    min-height: 100vh;
 }
 
 header {
     background-color: #352F44;
     height:auto;
+}
+
+footer {
+    background-color: #352F44;
+    height: 10vh;
+}
+
+/* index.html start hier */
+.index_header {
+    height: 10vh;
 }
 
 .index_main {
@@ -16,23 +28,38 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-}
-
-footer {
-    background-color: #352F44;
-    height: 11vh;
+    gap: 10vh;
 }
 
 .home_page_img {
     height: 20vh;
-    width: 30vw;
+    width: auto;
 }
 
 .home_page_button {
     background-color: #FAF0E6;
+    color: #000000;
+    text-decoration: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 3.5rem;
+    filter: drop-shadow(5px 5px 0px black);
 }
+
+.home_page_button:hover {
+    background-color: #d2d2d2;
+}
+
+/* types.html start hier */
+.types_main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+    min-height: 75vh;
+}
+
 
 /* Eten.html start hier met editen */
 #eten-logo{
