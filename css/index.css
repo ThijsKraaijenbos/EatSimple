@@ -1,3 +1,4 @@
+/* algemene dingen voor elke pagina */
 body {
     margin: 0;
     padding: 0;
@@ -10,6 +11,16 @@ header {
     height:auto;
 }
 
+footer {
+    background-color: #352F44;
+    height: 10vh;
+}
+
+/* index.html start hier */
+.index_header {
+    height: 10vh;
+}
+
 .index_main {
     min-height: 80vh;
     display: flex;
@@ -18,14 +29,9 @@ header {
     align-items: center;
 }
 
-footer {
-    background-color: #352F44;
-    height: 10vh;
-}
-
 .home_page_img {
     height: 20vh;
-    width: 30vw;
+    width: auto;
 }
 
 .home_page_button {
