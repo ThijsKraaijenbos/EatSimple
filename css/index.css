@@ -151,6 +151,12 @@ article button {
     gap: 5vh;
 }
 
+.drinken-main h1 {
+    font-family: "Vujahday Script", cursive;
+    letter-spacing: 5px;
+    font-size: 5rem;
+}
+
 .drinken-items {
     display: flex;
     justify-content: center;
@@ -187,5 +193,9 @@ article button {
 
 .drinken-button:hover {
     background-color: #d2d2d2;
+}
+
+.drinken-backbutton {
+    margin-bottom: 5vh;
 }
 
