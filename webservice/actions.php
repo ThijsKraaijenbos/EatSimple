@@ -1,89 +1,35 @@
 <?php
-/**
- * @return array
- */
-function getFoodTypes()
-{
-    return [
-        "rundvlees" => [
-            [
-                "id" => 1,
-                "name" => "Big mac",
-                "image" => "img/all_food/rundvlees/bigmac.png",
-            ],
-            [
-                "id" => 2,
-                "name" => "Ketchup burger",
-                "image" => "img/all_food/rundvlees/ketchup-burger.png",
-            ],
-        ],
-        "kip" => [
-            [
-                "id" => 1,
-                "name" => "Kip nuggets",
-                "image" => "img/all_food/kip/kip-nuggets.png",
-            ],
-            [
-                "id" => 2,
-                "name" => "Chicken tenders",
-                "image" => "img/all_food/kip/chicken-tenders.png",
-            ],
-        ],
-        "varken" => [
-            [
-                "id" => 1,
-                "name" => "Bacon",
-                "image" => "img/all_food/varkensvlees/bigmac.png",
-            ],
-            [
-                "id" => 2,
-                "name" => "Varken2",
-                "image" => "img/all_food/varkensvlees/ketchup-burger.png",
-            ],
-        ]
-    ];
+header('Content-Type: application/json'); // Set the content type to JSON
+require 'database.php';
+
+try {
+
+    if (isset($_GET['id'])) {
+        // Retrieve the 'id' value from the URL
+        $id = $_GET['id'];
+
+        // Prepare SQL statement to fetch data
+        $stmt = $pdo->prepare("SELECT * FROM types WHERE product_id = :id");
+
+        // Bind the 'id' parameter
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Execute the prepared statement
+        $stmt->execute();
+
+        // Fetch all rows as an associative array
+        $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Output the data as JSON
+        echo json_encode($items);
+    } else {
+        // Handle the case where 'id' parameter is not set in the URL
+        echo json_encode(['error' => 'ID parameter is missing from the URL']);
+    }
+
+} catch (PDOException $e) {
+    // Handle database errors
+    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
 }
 
-function getFoodDetails($id)
-{
-    $details = [
-        [
-            "id" => 1,
-            "description" => "De big mac is een hamburger ofzo idfk ik schrijf maar wat random bullshit hierzo",
-            "vegan" => false,
-            "nutrients" => [
-                "33 gram vet",
-                "26 gram eiwit",
-                "44 gram koolhydraten"
-            ],
-            "ingredients" => [
-                "brood",
-                "rundvlees 2x",
-                "sla",
-                "kaas 2x",
-                "augurken",
-                "big mac saus",
-                "uien"
-            ]
-        ],
-        [
-            "id" => 2,
-            "description" => "TBD",
-            "vegan" => false,
-            "nutrients" => [
-                "?? gram vet",
-                "?? gram eiwit",
-                "?? gram koolhydraten"
-            ],
-            "ingredients" => [
-                "brood",
-                "rundvlees",
-                "sla",
-                "kaas",
-                "ketchup",
-                "uien"
-            ]
-        ],
-    ];
-    return $details[$id];
-}
+?>
