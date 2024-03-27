@@ -1,4 +1,4 @@
-window.addEventListener('load', init);x
+window.addEventListener('load', init);
 
 let id = new URLSearchParams(window.location.search).get('id');
 let customUrl = "webservice/actions.php?id=" + id;
