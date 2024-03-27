@@ -23,9 +23,15 @@ function getApi(url, nextFunction) {
 
 
 function populateSite(products) {
+
+    // load all products of the anchor tag that has been clicked
     console.log(products);
     container = document.getElementById('container-producten');
     main = document.querySelector("main")
+
+    createCart()
+
+
     for (let product in products) {
         // create the elements
         const productContainer = document.createElement("article")
@@ -34,14 +40,13 @@ function populateSite(products) {
         const productImage = document.createElement("img")
 
 
-
         // Classes & ID
         productImage.classList.add("product-image-size")
         productButton.classList.add("product-button")
 
         // Dataset, Src, InnerText
         productImage.src = products[product].img
-        productButton.dataset.type =  products[product].type_id
+        productButton.dataset.name = products[product].name
         productButton.innerText = "Bestel";
         productName.innerText = products[product].name
 
@@ -58,13 +63,43 @@ function populateSite(products) {
     }
 }
 
-function addToCart(e) {
-    console.log(e.target.dataset.type)
-    // Put the dataset in a variable and save it to localstorage in this case the cart
-    const productType = e.target.dataset.type
 
+function createCart(){
+    // create Cart + cart Counter
+    const cartDiv = document.createElement("div")
+    const cartIcon = document.createElement("span")
+    let cartCounter = document.createElement("span")
+
+    // Classes & Id
+    cartDiv.id = "add-to-cart"
+    cartIcon.id = "cart-icon"
+    cartCounter.id = "cart-count"
+
+    // Dataset, Src, InnerText
+    cartCounter.innerText = " 0"
+    cartIcon.innerHTML = " &#128722;"
+
+
+    // AppendSections
+    cartDiv.appendChild(cartIcon)
+    cartDiv.appendChild(cartCounter)
+    main.appendChild(cartDiv)
 }
 
+function addToCart(e) {
+    console.log(e.target.dataset.name)
+    let productType = e.target.dataset.name
+
+    let cartCountElement = document.getElementById("cart-count")
+    cartCountElement.innerHTML = productType
+
+    // when you click the button add the item where you clicked to the cart
+
+
+    // Put the dataset in a variable and save it to localstorage in this case the cart
+
+
+}
 
 
 function errorMessage(message) {

@@ -114,8 +114,8 @@ footer {
 /* Eten.html start hier met editen */
 #eten-logo {
     width: 250px;
-    height: auto;
-    padding: 1vh 2vw;
+    /*height: auto;*/
+    padding: 0 2vw;
 }
 
 #eten-main h1 {
@@ -239,6 +239,12 @@ article img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+#add-to-cart{
+    font-size:2rem;
+    position: absolute;
+    right:0;
+    top:5vw;
+}
 #container-producten article {
     gap:0;
 }
@@ -262,7 +268,6 @@ article img {
     transition: 300ms ease-in-out;
     letter-spacing: 1px;
 }
-
 .product-button:hover{
     background-color: #d2d2d2;
     color: white;

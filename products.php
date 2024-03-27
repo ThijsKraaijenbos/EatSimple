@@ -44,9 +44,12 @@
 </head>
 <body>
 <header class="index_header">
+    <img src="img/eatsimplelogo2.png" alt="" id="eten-logo">
 </header>
+
 <main>
     <section id="container-producten"> <!-- Roshan Changed -->
+
     </section>
 </main>
 <footer></footer>
