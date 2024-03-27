@@ -158,6 +158,8 @@ article button {
 
 .drinken-logo {
     width: 250px;
+    height: auto;
+    padding: 1vh 2vw;
 }
 
 .drinken-main {
