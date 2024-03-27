@@ -5,7 +5,6 @@ require 'database.php';
 try {
     // Prepare SQL statement to fetch data.
     $stmt = '';
-
     if ($_GET['id'] != 'null') {
         $id = $_GET['id'];
         $stmt = $pdo->prepare("SELECT * FROM types WHERE product_id =" . $id);

@@ -39,13 +39,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Eat Simple</title>
+    <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="js/task.js" defer></script>
 </head>
 <body>
-
-<div id="container">
-
-</div>
-
+<header class="index_header">
+</header>
+<main>
+    <section id="container-producten"> <!-- Roshan Changed -->
+    </section>
+</main>
+<footer></footer>
 </body>
+
 </html>

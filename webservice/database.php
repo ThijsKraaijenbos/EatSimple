@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost'; // Change this to your database hostname
-$dbname = 'Eatsimple'; // Change this to your database name
+$dbname = 'eatsimple'; // Change this to your database name
 $user = 'root'; // Change this to your database username
 $pass = ''; // Change this to your database password
 
