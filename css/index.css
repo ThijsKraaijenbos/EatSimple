@@ -86,10 +86,28 @@ footer {
     gap: 10vh;
 }
 
+.food-drinks div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
 .types_main img {
     height: 30vh;
     border: 2px solid black;
     border-radius: 10px;
+}
+
+.types-button {
+    background-color: #FAF0E6;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 10vw;
 }
 
 
@@ -155,6 +173,8 @@ article img {
 
 .drinken-logo {
     width: 250px;
+    height: auto;
+    padding: 1vh 2vw;
 }
 
 .drinken-main {
@@ -168,7 +188,6 @@ article img {
 
 .drinken-main h1 {
     font-family: "Vujahday Script", cursive;
-    letter-spacing: 5px;
     font-size: 5rem;
 }
 
