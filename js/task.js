@@ -23,14 +23,22 @@ function getApi(url, nextFunction) {
 function populateSite(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-        let PokemonCard = document.createElement('div');
-        PokemonCard.classList.add('pokemon-card');
-        PokemonCard.innerHTML = `${data[i].name}`;
+        let foodCard = document.createElement('div');
+        foodCard.innerHTML = `${data[i].name}`;
 
-        container.appendChild(PokemonCard);
+        let foodButton = document.createElement('button');
+        foodButton.dataset.index = `${data[i].type_id}`;
+        foodButton.addEventListener('click', addToCart)
+        foodButton.innerHTML = `Bestel`;
+
+        foodCard.appendChild(foodButton);
+
+        container.appendChild(foodCard);
     }
+}
 
-
+function addToCart(e) {
+    console.log(e.target.dataset.index)
 }
 
 function errorMessage(message) {
