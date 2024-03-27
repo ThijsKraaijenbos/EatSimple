@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let customUrl = "/webservice/actions.php";
+let customUrl = "webservice/actions.php";
 
 function init() {
     getApi(customUrl, populateSite);
@@ -19,7 +19,7 @@ function getApi(url, nextFunction) {
 }
 
 function populateSite(data) {
-    console.log("Test alles is geleden");
+    console.log(data);
 
 }
 

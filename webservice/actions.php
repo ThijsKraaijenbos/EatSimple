@@ -3,29 +3,17 @@ header('Content-Type: application/json'); // Set the content type to JSON
 require 'database.php';
 
 try {
+    // Prepare SQL statement to fetch data
+    $stmt = $pdo->prepare("SELECT * FROM types");
 
-    if (isset($_GET['id'])) {
-        // Retrieve the 'id' value from the URL
-        $id = $_GET['id'];
+    // Execute the prepared statement
+    $stmt->execute();
 
-        // Prepare SQL statement to fetch data
-        $stmt = $pdo->prepare("SELECT * FROM types WHERE product_id = :id");
+    // Fetch all rows as an associative array
+    $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Bind the 'id' parameter
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-        // Execute the prepared statement
-        $stmt->execute();
-
-        // Fetch all rows as an associative array
-        $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Output the data as JSON
-        echo json_encode($items);
-    } else {
-        // Handle the case where 'id' parameter is not set in the URL
-        echo json_encode(['error' => 'ID parameter is missing from the URL']);
-    }
+    // Output the data as JSON
+    echo json_encode($items);
 
 } catch (PDOException $e) {
     // Handle database errors

@@ -39,7 +39,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokémon magazine</title>
-    <script type="text/javascript" src="/js/task.js" defer></script>
+    <script type="text/javascript" src="js/task.js" defer></script>
 </head>
 <body>
 
