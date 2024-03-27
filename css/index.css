@@ -20,8 +20,6 @@ header {
     border-radius: 10px;
     font-size: 2.5rem;
     transition: 300ms ease-in-out;
-
-
 }
 
 #general-back-button:hover {
@@ -147,16 +145,26 @@ article button {
 .drinken-main {
     min-height: 77vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10vw;
+    align-items: center;
+    gap: 5vh;
 }
 
-.drinken-main div {
+.drinken-items {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 10vh;
+}
+
+.drinken-items div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
 }
 
 .drinken-main img {
