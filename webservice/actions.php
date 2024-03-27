@@ -4,7 +4,14 @@ require 'database.php';
 
 try {
     // Prepare SQL statement to fetch data
-    $stmt = $pdo->prepare("SELECT * FROM types");
+    $stmt = '';
+
+    if ($_GET['id'] != 'null') {
+        $id = $_GET['id'];
+        $stmt = $pdo->prepare("SELECT * FROM types WHERE product_id =" . $id);
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM types");
+    }
 
     // Execute the prepared statement
     $stmt->execute();

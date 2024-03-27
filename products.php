@@ -38,12 +38,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pokémon magazine</title>
+    <title>Eat Simple</title>
     <script type="text/javascript" src="js/task.js" defer></script>
 </head>
 <body>
 
+<div id="container">
 
+</div>
 
 </body>
 </html>

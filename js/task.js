@@ -1,6 +1,8 @@
 window.addEventListener('load', init);
 
-let customUrl = "webservice/actions.php";
+let id = new URLSearchParams(window.location.search).get('id');
+let customUrl = "webservice/actions.php?id=" + id;
+const container = document.getElementById('container');
 
 function init() {
     getApi(customUrl, populateSite);
@@ -20,6 +22,14 @@ function getApi(url, nextFunction) {
 
 function populateSite(data) {
     console.log(data);
+    for (let i = 0; i < data.length; i++) {
+        let PokemonCard = document.createElement('div');
+        PokemonCard.classList.add('pokemon-card');
+        PokemonCard.innerHTML = `${data[i].name}`;
+
+        container.appendChild(PokemonCard);
+    }
+
 
 }
 
