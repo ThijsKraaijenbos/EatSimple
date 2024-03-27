@@ -3,7 +3,7 @@ header('Content-Type: application/json'); // Set the content type to JSON
 require 'database.php';
 
 try {
-    // Prepare SQL statement to fetch data
+    // Prepare SQL statement to fetch data.
     $stmt = '';
 
     if ($_GET['id'] != 'null') {
