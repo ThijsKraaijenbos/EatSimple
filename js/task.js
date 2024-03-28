@@ -80,13 +80,14 @@ function createCart() {
     cartCounter.id = "cart-count";
 
     // Dataset, Src, InnerText
-    cartCounter.innerText = " 0";
+    cartCounter.innerText = "";
     cartIcon.innerHTML = " &#128722;";
 
 
     // AppendSections
-    cartDiv.appendChild(cartIcon)
     cartDiv.appendChild(cartCounter)
+    cartDiv.appendChild(cartIcon)
+
     cartDiv.addEventListener('click', openModal)
     main.appendChild(cartDiv)
 }
@@ -98,8 +99,15 @@ function addToCart(e) {
     let productAmount = 1;  // Default amount is 1
     let productImg = e.target.dataset.img;
     console.log(productImg)
+
     let cartCountElement = document.getElementById("cart-count");
-    cartCountElement.innerHTML = `Product toegevoegd`;//${productName}
+    cartCountElement.innerHTML = `Toegevoegd`;//${productName}
+    cartCountElement.classList.add('fade-in-out', 'show');
+
+// Clear the innerHTML and remove 'show' class after 1.5 seconds
+    setTimeout(() => {
+        cartCountElement.classList.remove('show');
+    }, 1500); // 1500 milliseconds = 1.5 seconds
 
     // Retrieve the cart from local storage or initialize it as an empty array
     let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
@@ -150,6 +158,9 @@ function openModal() {//modal-close
 
         cartList.innerHTML += productHTML;
     });
+
+    // let checkOut = document.querySelector('.checkout');
+    // checkOut.addEventListener('click', openCheckOut)
 
     let removeButtons = dialog.querySelectorAll('.remove-button');
     removeButtons.forEach(button => {
