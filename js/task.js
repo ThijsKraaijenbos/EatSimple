@@ -98,7 +98,7 @@ function addToCart(e) {
     let productImg = e.target.dataset.img;
     console.log(productImg)
     let cartCountElement = document.getElementById("cart-count");
-    cartCountElement.innerHTML = productName;
+    cartCountElement.innerHTML = `Product toegevoegd`;//${productName}
 
     // Retrieve the cart from local storage or initialize it as an empty array
     let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
