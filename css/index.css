@@ -146,9 +146,11 @@ article {
     gap: 5vh;
 }
 
-article img {
+#container-eten  img {
     width: 250px;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .eten-button{
@@ -241,7 +243,9 @@ article img {
 #container-producten{
     margin:10vh 2vw;
     display: grid;
+    gap:50px;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-row: auto;
 }
 #add-to-cart{
     font-size:2rem;
@@ -257,6 +261,7 @@ article img {
 }
 .product-image-size{
     object-fit: cover;
+    object-position: center;
     width:250px;
     height:250px;
 }
