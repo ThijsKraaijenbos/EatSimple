@@ -51,7 +51,13 @@
     <section id="container-producten"> <!-- Roshan Changed -->
 
     </section>
+
+    <dialog class="products-modal">
+        <button class="modal-close">❌</button>
+    </dialog>
+
 </main>
+
 <footer></footer>
 </body>
 
