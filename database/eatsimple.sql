@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 28 mrt 2024 om 11:30
+-- Gegenereerd op: 28 mrt 2024 om 14:01
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -87,7 +87,9 @@ VALUES (1, 'Pizza',
         'https://www.deliciousmagazine.co.uk/wp-content/uploads/2023/12/2023D191_MIED_PIZZAS_2__-768x960.jpg'),
        (2, 'Burgers',
         'https://www.seriouseats.com/thmb/_c-xbP-tch4dpSTxKE1zY16sHo8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20231204-SEA-VeganBurger-FredHardy-00-dbf603c78b694bfd99489b85ab44f4c4.jpg'),
-       (3, 'Pasta', 'https://www.jessicagavin.com/wp-content/uploads/2020/07/types-of-pasta-7.jpg');
+       (3, 'Pasta', 'https://www.jessicagavin.com/wp-content/uploads/2020/07/types-of-pasta-7.jpg'),
+       (4, 'Warme Drankjes', ''),
+       (5, 'Koude drankjes', '');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,22 @@ VALUES (1, 1, 'Hawai',
        (14, 3, 'Pasta Fettuccine',
         'https://images.ctfassets.net/3vz37y2qhojh/5VhlROxP8sUuxaoEITTHPl/51be515b0df517fa026fc45520598fb5/Easy-Fettuccine-Alfredo-Hero-Horizontal.jpg'),
        (15, 3, 'Pasta Pesto',
-        'https://marleyspoon.com/media/recipes/118119/main_photos/large/schnelle_paprika_hahnchen_penne-f98452974c20266a94c5d0aa1a25e0c4.jpeg');
+        'https://marleyspoon.com/media/recipes/118119/main_photos/large/schnelle_paprika_hahnchen_penne-f98452974c20266a94c5d0aa1a25e0c4.jpeg'),
+       (16, 4, 'Koffie',
+        'https://images0.persgroep.net/rcs/L4oSb3LnFtLh9Znzgmt5LDVU4bw/diocontent/160662822/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8'),
+       (17, 4, 'Thee', 'https://www.tea4you.nl/media/86/dd/1a/1672752518/de%20temperatuur%20van%20je%20theewater.jpg'),
+       (18, 4, 'Cappuccino',
+        'https://insanelygoodrecipes.com/wp-content/uploads/2023/06/Cappuccino-Coffee-in-a-White-Cup.jpg'),
+       (19, 4, 'Chocolademelk met Slagroom',
+        'https://i0.wp.com/gwennsbakery.nl/wp-content/uploads/2019/01/Warme-chocolademelk-Gwenns-Bakery-2.jpg?resize=833%2C540&ssl=1'),
+       (20, 4, 'Chocolademelk zonder slagroom',
+        'https://www.puurgezond.nl/fileadmin/_processed_/e/4/csm_Chocolademelk_2accf7d240.jpg'),
+       (26, 5, 'Cola', 'https://live.staticflickr.com/65535/50203710418_fe9bf5e0cb_b.jpg'),
+       (27, 5, 'Fanta', 'https://i.pinimg.com/originals/b1/ec/12/b1ec12a69c28ef99526335f06fe6f584.png'),
+       (28, 5, 'Cassis', 'https://eethuis-r2b.nl/wp-content/uploads/2021/08/fanta-cassis.jpg'),
+       (29, 5, 'Appelsap',
+        'https://images0.persgroep.net/rcs/IRRYzcvvW4PBET_JCV2rAfASf7g/diocontent/220546051/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8'),
+       (30, 5, 'Koude Chocolademelk', 'https://www.horescasmulders.nl/media/products/7266062.jpg');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -170,13 +187,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
-    MODIFY `product_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `product_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `types`
 --
 ALTER TABLE `types`
-    MODIFY `type_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+    MODIFY `type_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
