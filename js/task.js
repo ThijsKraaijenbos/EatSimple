@@ -4,6 +4,7 @@ let id = new URLSearchParams(window.location.search).get('id'); // URLSearchPara
 let customUrl = "webservice/actions.php?id=" + id;
 let container // Roshan changed
 let main
+let dialog;
 
 function init() {
     getApi(customUrl, populateSite);
@@ -79,10 +80,10 @@ function createCart(){
     cartCounter.innerText = " 0"
     cartIcon.innerHTML = " &#128722;"
 
-
     // AppendSections
     cartDiv.appendChild(cartIcon)
     cartDiv.appendChild(cartCounter)
+    cartDiv.addEventListener('click', openModal)
     main.appendChild(cartDiv)
 }
 
@@ -100,6 +101,23 @@ function addToCart(e) {
 
 
 }
+
+function openModal() {
+    dialog = document.querySelector('.products-modal')
+    dialog.addEventListener('click', closeModal)
+    dialog.showModal();
+}
+
+function closeModal(e) {
+    const clickedItem = e.target;
+
+    if (clickedItem.nodeName !== 'BUTTON') {
+        return;
+    }
+
+    dialog.close();
+}
+
 
 
 function errorMessage(message) {

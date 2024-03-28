@@ -275,3 +275,25 @@ article img {
     filter: drop-shadow(2px 5px 1px black);
     transform: scale(1.20);
 }
+
+/* products.php/js modal css */
+.products-modal {
+    opacity: 0;
+    transition: all 0.7s ease;
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 16px 22px 0 rgba(0, 0, 0, 0.6);
+    width: 10vw;
+    height: 10vh;
+    position: absolute;
+    bottom: 60vh;
+    left: 85vw;
+}
+
+.products-modal[open] {
+    opacity: 1;
+    transition-delay: 0s;
+}
