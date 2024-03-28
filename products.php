@@ -47,7 +47,7 @@
     <img src="img/eatsimplelogo2.png" alt="" id="eten-logo">
 </header>
 
-<main>
+<main class="products-main">
     <section id="container-producten"> <!-- Roshan Changed -->
 
     </section>
