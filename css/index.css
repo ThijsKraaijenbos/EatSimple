@@ -37,7 +37,7 @@ footer {
 
 /* index.html start hier */
 .index_header {
-    height: 10vh;
+    min-height: 10vh;
 }
 
 .index_main {
@@ -236,6 +236,10 @@ article {
 }
 
 /* products.php/js css*/
+.products-main {
+    min-height: 70vh;
+}
+
 #container-producten{
     margin:10vh 2vw;
     display: grid;
