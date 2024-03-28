@@ -320,3 +320,7 @@ article {
     font-size: 22px;
     cursor: pointer;
 }
+
+.blur {
+    filter: blur(5px);
+}
