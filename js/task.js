@@ -89,11 +89,12 @@ function createCart() {
 }
 
 function addToCart(e) {
+
     let productId = parseInt(e.target.dataset.type_id);
     let productName = e.target.dataset.name;
     let productAmount = 1;  // Default amount is 1
     let productImg = e.target.dataset.img;
-
+    console.log(productImg)
     let cartCountElement = document.getElementById("cart-count");
     cartCountElement.innerHTML = productName;
 
