@@ -165,6 +165,16 @@ function openModal() {//modal-close
     dialog.showModal();
 }
 
+function closeModal(e) {
+    const clickedItem = e.target;
+
+    if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
+        return;
+    }
+    maincontainer.classList.remove('blur')
+    dialog.close();
+}
+
 function removeItem(e) {
     let productIdToRemove = parseInt(e.target.dataset.product_id);
 
@@ -216,18 +226,6 @@ function addItem(e) {
         openModal();
     }
 }
-
-function closeModal(e) {
-    const clickedItem = e.target;
-
-    if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
-        return;
-    }
-    maincontainer.classList.remove('blur')
-    dialog.close();
-}
-
-
 
 function errorMessage(message) {
     console.log(message);
