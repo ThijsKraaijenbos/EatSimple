@@ -307,7 +307,7 @@ article {
     transition-delay: 0s;
 }
 
-.products-modal button {
+.modal-close {
     position: absolute;
     top: 5px;
     right: 5px;

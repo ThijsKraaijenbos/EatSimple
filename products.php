@@ -54,6 +54,15 @@
 
     <dialog class="products-modal">
         <button class="modal-close">❌</button>
+
+        <div id="cart-list">
+<!--            <div id="list-item">-->
+<!--                <img src="">-->
+<!--                <p>name</p>-->
+<!--                <p>amount</p>-->
+<!--                <button>remove 1</button>-->
+<!--            </div>-->
+        </div>
     </dialog>
 
 </main>

@@ -118,16 +118,107 @@ function addToCart(e) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function openModal() {
+function openModal() {//modal-close
+    let kruisje = document.querySelector('.modal-close')
+    kruisje.addEventListener('click', closeModal)
     dialog = document.querySelector('.products-modal')
-    dialog.addEventListener('click', closeModal)
+    //dialog.addEventListener('click', closeModal)
+
+    let cartList = dialog.querySelector('#cart-list');
+
+    if (!cartList) {
+        console.error('Cart list not found');
+        return;
+    }
+
+    cartList.innerHTML = ''
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.forEach(item => {
+        let [productId, productName, productAmount] = item;
+//<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
+        let productHTML = `
+            <div class="list-item">
+                <p class="product-name">${productName}</p>
+                <p class="product-amount">Amount: ${productAmount}</p>
+                <button class="add-button" data-product_id="${productId}">+1</button>
+                <button class="remove-button" data-product_id="${productId}">-1</button>
+            </div>
+        `;
+
+        cartList.innerHTML += productHTML;
+    });
+
+    let removeButtons = dialog.querySelectorAll('.remove-button');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', removeItem);
+    });
+
+    let addButtons = dialog.querySelectorAll('.add-button');
+    addButtons.forEach(button => {
+        button.addEventListener('click', addItem);
+    });
+
     dialog.showModal();
+}
+
+function removeItem(e) {
+    let productIdToRemove = parseInt(e.target.dataset.product_id);
+
+    // Retrieve the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Find the index of the item to remove
+    let indexToRemove = cart.findIndex(item => item[0] === productIdToRemove);
+
+    if (indexToRemove !== -1) {
+        // Decrease the amount of the item by 1
+        cart[indexToRemove][2]--;
+
+        // If the amount becomes 0, remove the item from the cart
+        if (cart[indexToRemove][2] === 0) {
+            cart.splice(indexToRemove, 1);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Re-open the modal to reflect the changes
+        openModal();
+    }
+}
+
+function addItem(e) {
+    let productIdToRemove = parseInt(e.target.dataset.product_id);
+
+    // Retrieve the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Find the index of the item to remove
+    let indexToAdd = cart.findIndex(item => item[0] === productIdToRemove);
+
+    if (indexToAdd !== -1) {
+        // Decrease the amount of the item by 1
+        cart[indexToAdd][2]++;
+
+        // If the amount becomes 0, remove the item from the cart
+        if (cart[indexToAdd][2] === 0) {
+            cart.splice(indexToAdd, 1);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Re-open the modal to reflect the changes
+        openModal();
+    }
 }
 
 function closeModal(e) {
     const clickedItem = e.target;
 
-    if (clickedItem.nodeName !== 'BUTTON') {
+    if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
         return;
     }
 
