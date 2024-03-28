@@ -18,9 +18,10 @@
 
 <main class="products-main">
 
+    <div id="cart-list">
 
-
-
+    </div>
+    <button class="checkout">Bestellen</button>
 
 </main>
 
