@@ -5,6 +5,7 @@ let customUrl = "webservice/actions.php?id=" + id;
 let container // Roshan changed
 let main
 let dialog;
+let maincontainer = document.querySelector('#container-producten')
 
 function init() {
     getApi(customUrl, populateSite);
@@ -160,6 +161,7 @@ function openModal() {//modal-close
         button.addEventListener('click', addItem);
     });
 
+    maincontainer.classList.add('blur')
     dialog.showModal();
 }
 
@@ -221,7 +223,7 @@ function closeModal(e) {
     if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
         return;
     }
-
+    maincontainer.classList.remove('blur')
     dialog.close();
 }
 
