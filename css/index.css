@@ -252,6 +252,8 @@ article {
     position: absolute;
     right:0;
     top:5vw;
+    margin-top: 40px;
+    margin-right: 10px;
 }
 #container-producten article {
     gap:0;
@@ -323,4 +325,13 @@ article {
 
 .blur {
     filter: blur(5px);
+}
+
+.fade-in-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in-out.show {
+    opacity: 1;
 }

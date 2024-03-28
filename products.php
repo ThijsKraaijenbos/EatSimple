@@ -48,7 +48,7 @@
 </header>
 
 <main class="products-main">
-    <section id="container-producten"> <!-- Roshan Changed -->
+    <section id="container-producten">  <!-- Roshan Changed -->
 
     </section>
 
@@ -63,6 +63,7 @@
 <!--                <button>remove 1</button>-->
 <!--            </div>-->
         </div>
+        <a href="checkout.php" class="checkout">afrekenen</a>
     </dialog>
 </main>
 
