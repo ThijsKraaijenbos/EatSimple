@@ -57,7 +57,7 @@
 
         <div id="cart-list"></div>
         <div class="checkout-div">
-            <a href="checkout.php" class="checkout">afrekenen</a>
+            <a href="checkout.html" class="checkout">afrekenen</a>
         </div>
     </dialog>
 </main>

@@ -146,6 +146,7 @@ function openModal() {//modal-close
 
     cart.forEach(item => {
         let [productId, productName, productAmount] = item;
+
 //<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
         let productHTML = `
             <div class="list-item">
