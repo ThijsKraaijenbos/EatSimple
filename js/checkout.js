@@ -8,18 +8,6 @@ function init() {
     populateSite()
 }
 
-function getApi(url, nextFunction) {
-    fetch(url)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error (${response.status}): ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(nextFunction)
-        .catch(errorMessage);
-}
-
 function populateSite() {
     let cartList = document.querySelector('#cart-list');
 
@@ -137,17 +125,22 @@ function addItem(e) {
 
 function submitList() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (!cart) {
+        return
+    }
+
     let order_id = JSON.parse(localStorage.getItem('order_id')) || [];
     console.log(cart)
 
     let items = []
 
     for (let i = 0; i < cart.length; i++) {
-        items.push([order_id,cart[i][0]])
+        items.push([order_id, cart[i][0]])
+        // for (let j = 0; j < cart[i][1]; j++) {
+        //
+        // }
     }
     console.log(items)
-
-    // order id, product id X amount
 
     fetch("./webservice/checkout.php", {
         method: 'POST',
@@ -156,11 +149,9 @@ function submitList() {
         },
         body: 'data=' + encodeURIComponent(JSON.stringify(items)), // Stringify and send the data under 'data' key
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+
+    localStorage.setItem('cart', [])
+
+    window.location.href = 'types.html';
+    window.close();
 }
