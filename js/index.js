@@ -7,7 +7,7 @@ let submit = document.querySelector('.submit')
 submit.addEventListener('click', submitButton)
 
 let dialog = document.querySelector('.admin-modal')
-let table = document.querySelector('#table')
+let order_id = document.querySelector('#order_id')
 let password = document.querySelector('#password')
 
 
@@ -17,7 +17,7 @@ const init = () => {
 }
 
 function openAdminPanel() {
-    if (localStorage.getItem('table')){
+    if (localStorage.getItem('order_id')){
         window.location.href = 'types.html';
         window.close();
     } else {
@@ -28,7 +28,7 @@ function openAdminPanel() {
 function submitButton() {
 
     if (password.value == 'admin') {
-        localStorage.setItem('table', table.value.toString());
+        localStorage.setItem('order_id', order_id.value.toString());
         dialog.close()
     }
 
