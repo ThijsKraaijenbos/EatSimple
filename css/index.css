@@ -297,7 +297,6 @@ article {
     box-shadow: 0 16px 22px 0 rgba(0, 0, 0, 0.6);
     width: 20vw;
     height: 40vh;
-    position: absolute;
     top: -30vh;
     right: -75vw;
 }
@@ -325,20 +324,15 @@ article {
     cursor: pointer;
 }
 
-.checkout-div {
-    display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    bottom: 5px;
-    right: 5px;
-}
-
 .checkout {
     background-color: #ffa500;
     color: white;
     text-decoration: none;
     padding: 3px;
     border-radius: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px  ;
 }
 
 .blur {
