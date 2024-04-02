@@ -21,6 +21,8 @@ function openAdminPanel() {
         window.location.href = 'types.html';
         window.close();
     } else {
+        let closeButton = document.querySelector('.modal-close')
+        closeButton.addEventListener('click', closeModal)
         dialog.showModal();
     }
 }
@@ -44,6 +46,10 @@ function submitButton() {
     //      open modal
     //      check of waardes correct zijn
     //      zet tafel nummer naar tafel waarden in local
+}
+
+function closeModal() {
+    dialog.close();
 }
 
 
