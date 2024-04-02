@@ -137,12 +137,30 @@ function addItem(e) {
 
 function submitList() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let order_id = JSON.parse(localStorage.getItem('order_id')) || [];
     console.log(cart)
 
-    cart.forEach(item => {
-        let [productId, productName, productAmount] = item;
-        console.log(`${productId} ${productAmount}`)
-    });
+    let items = []
 
+    for (let i = 0; i < cart.length; i++) {
+        items.push([order_id,cart[i][0]])
+    }
+    console.log(items)
 
+    // order id, product id X amount
+
+    fetch("./webservice/checkout.php", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', // Change the content type
+        },
+        body: 'data=' + encodeURIComponent(JSON.stringify(items)), // Stringify and send the data under 'data' key
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
