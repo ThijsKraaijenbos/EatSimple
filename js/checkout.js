@@ -115,5 +115,13 @@ function addItem(e) {
 }
 
 function submitList() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cart)
+
+    cart.forEach(item => {
+        let [productId, productName, productAmount] = item;
+        console.log(`${productId} ${productAmount}`)
+    });
+
 
 }

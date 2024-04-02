@@ -6,11 +6,10 @@ home_page_button.addEventListener('click', openAdminPanel)
 let submit = document.querySelector('.submit')
 submit.addEventListener('click', submitButton)
 
-let username = document.querySelector('#username')
+let dialog = document.querySelector('.admin-modal')
+let table = document.querySelector('#table')
 let password = document.querySelector('#password')
 
-
-let dialog = document.querySelector('.admin-modal')
 
 //Init functie
 const init = () => {
@@ -18,14 +17,32 @@ const init = () => {
 }
 
 function openAdminPanel() {
-    dialog.showModal();
+    if (localStorage.getItem('table')){
+        window.location.href = 'types.html';
+        window.close();
+    } else {
+        dialog.showModal();
+    }
 }
 
 function submitButton() {
-    if (username.value == 'admin' && password.value == 'admin') {
-        console.log('u mag inloggen');
+
+    if (password.value == 'admin') {
+        localStorage.setItem('table', table.value.toString());
     }
 
+    //localStorage.setItem('table', cardCount.toString());
+
+    //playersAmount = localStorage.getItem('table');
+
+    // klikt eerst op button
+    // checkt of er een tafel nummer is ingevuld
+    //  ja
+    //      wordt naar types gestuur
+    //  nee
+    //      open modal
+    //      check of waardes correct zijn
+    //      zet tafel nummer naar tafel waarden in local
 }
 
 
