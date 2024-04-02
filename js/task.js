@@ -146,17 +146,35 @@ function openModal() {//modal-close
 
     cart.forEach(item => {
         let [productId, productName, productAmount] = item;
-//<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
-        let productHTML = `
-            <div class="list-item">
-                <p class="product-name">${productName}</p>
-                <p class="product-amount">Amount: ${productAmount}</p>
-                <button class="add-button" data-product_id="${productId}">+1</button>
-                <button class="remove-button" data-product_id="${productId}">-1</button>
-            </div>
-        `;
 
-        cartList.innerHTML += productHTML;
+//<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
+
+        const div = document.createElement("div")
+        div.classList.add("list-item")
+
+        const productNameP = document.createElement("p")
+        productNameP.classList.add("product-name")
+        productNameP.innerText =`${productName}`
+        div.appendChild(productNameP)
+
+        const productAmountP = document.createElement("p")
+        productAmountP.classList.add("product-name")
+        productAmountP.innerText = `Amount: ${productAmount}`
+        div.appendChild(productAmountP)
+
+        const addButton = document.createElement("button")
+        addButton.classList.add("add-button")
+        addButton.dataset.product_id = `${productId}`
+        addButton.innerText = `+1`
+        div.appendChild(addButton)
+
+        const removeButton = document.createElement("button")
+        removeButton.classList.add("remove-button")
+        removeButton.dataset.product_id = `${productId}`
+        removeButton.innerText = `-1`
+        div.appendChild(removeButton)
+
+        cartList.appendChild(div)
     });
 
     // let checkOut = document.querySelector('.checkout');
