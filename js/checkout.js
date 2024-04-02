@@ -33,7 +33,7 @@ function populateSite() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     cart.forEach(item => {
-        let [productId, productName, productAmount] = item;
+        let [productId, productName, productAmount, productImg] = item;
 //<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
         const div = document.createElement("div")
         div.classList.add("list-item")
@@ -42,6 +42,11 @@ function populateSite() {
         productNameP.classList.add("product-name")
         productNameP.innerText =`${productName}`
         div.appendChild(productNameP)
+
+        // const productImageP = document.createElement("img");
+        // productImageP.classList.add("product-image");
+        // productImageP.src = `${productImg}`
+        // div.appendChild(productImageP);
 
         const productAmountP = document.createElement("p")
         productAmountP.classList.add("product-name")

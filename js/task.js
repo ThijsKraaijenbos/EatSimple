@@ -2,10 +2,10 @@ window.addEventListener('load', init);
 
 let id = new URLSearchParams(window.location.search).get('id'); // URLSearchParams haalt de url op
 let customUrl = "webservice/actions.php?id=" + id;
-let container // Roshan changed
-let main
+let container; // Roshan changed
+let main;
 let dialog;
-let maincontainer = document.querySelector('#container-producten')
+let maincontainer = document.querySelector('#container-producten');
 
 function init() {
     getApi(customUrl, populateSite);
@@ -85,11 +85,11 @@ function createCart() {
 
 
     // AppendSections
-    cartDiv.appendChild(cartCounter)
-    cartDiv.appendChild(cartIcon)
+    cartDiv.appendChild(cartCounter);
+    cartDiv.appendChild(cartIcon);
 
-    cartDiv.addEventListener('click', openModal)
-    main.appendChild(cartDiv)
+    cartDiv.addEventListener('click', openModal);
+    main.appendChild(cartDiv);
 }
 
 function addToCart(e) {
@@ -98,7 +98,7 @@ function addToCart(e) {
     let productName = e.target.dataset.name;
     let productAmount = 1;  // Default amount is 1
     let productImg = e.target.dataset.img;
-    console.log(productImg)
+    console.log(productImg);
 
     let cartCountElement = document.getElementById("cart-count");
     cartCountElement.innerHTML = `Toegevoegd`;//${productName}
@@ -128,9 +128,9 @@ function addToCart(e) {
 }
 
 function openModal() {//modal-close
-    let kruisje = document.querySelector('.modal-close')
-    kruisje.addEventListener('click', closeModal)
-    dialog = document.querySelector('.products-modal')
+    let kruisje = document.querySelector('.modal-close');
+    kruisje.addEventListener('click', closeModal);
+    dialog = document.querySelector('.products-modal');
     //dialog.addEventListener('click', closeModal)
 
     let cartList = dialog.querySelector('#cart-list');
@@ -140,41 +140,47 @@ function openModal() {//modal-close
         return;
     }
 
-    cartList.innerHTML = ''
+    cartList.innerHTML = '';
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     cart.forEach(item => {
-        let [productId, productName, productAmount] = item;
+        let [productId, productName, productAmount, productImg] = item;
 
 //<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
 
-        const div = document.createElement("div")
-        div.classList.add("list-item")
+        const div = document.createElement("div");
+        div.classList.add("list-item");
 
-        const productNameP = document.createElement("p")
-        productNameP.classList.add("product-name")
-        productNameP.innerText =`${productName}`
-        div.appendChild(productNameP)
+        const productNameP = document.createElement("p");
+        productNameP.classList.add("product-name");
+        productNameP.innerText = `${productName}`;
+        div.appendChild(productNameP);
 
-        const productAmountP = document.createElement("p")
-        productAmountP.classList.add("product-name")
-        productAmountP.innerText = `Amount: ${productAmount}`
-        div.appendChild(productAmountP)
+        // const productImageP = document.createElement("img");
+        // productImageP.classList.add("product-image");
+        // productImageP.src = `${productImg}`
+        // div.appendChild(productImageP);
 
-        const addButton = document.createElement("button")
-        addButton.classList.add("add-button")
-        addButton.dataset.product_id = `${productId}`
-        addButton.innerText = `+1`
-        div.appendChild(addButton)
+        const productAmountP = document.createElement("p");
+        productAmountP.classList.add("product-name");
+        productAmountP.innerText = `Amount: ${productAmount}`;
+        div.appendChild(productAmountP);
 
-        const removeButton = document.createElement("button")
-        removeButton.classList.add("remove-button")
-        removeButton.dataset.product_id = `${productId}`
-        removeButton.innerText = `-1`
-        div.appendChild(removeButton)
+        const addButton = document.createElement("button");
+        addButton.classList.add("add-button");
+        addButton.dataset.product_id = `${productId}`;
+        addButton.innerText = `+1`;
+        div.appendChild(addButton);
 
-        cartList.appendChild(div)
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("remove-button");
+        removeButton.dataset.product_id = `${productId}`;
+        removeButton.innerText = `-1`;
+        div.appendChild(removeButton);
+
+
+        cartList.appendChild(div);
     });
 
     // let checkOut = document.querySelector('.checkout');
@@ -190,16 +196,18 @@ function openModal() {//modal-close
         button.addEventListener('click', addItem);
     });
 
-    maincontainer.classList.add('blur')
+    maincontainer.classList.add('blur');
+    console.log(localStorage.getItem('cart'));
     dialog.showModal();
 }
+
 function closeModal(e) {
     const clickedItem = e.target;
 
     if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
         return;
     }
-    maincontainer.classList.remove('blur')
+    maincontainer.classList.remove('blur');
     dialog.close();
 }
 

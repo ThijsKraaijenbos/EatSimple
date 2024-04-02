@@ -346,6 +346,20 @@ article {
     right: 8px;
 }
 
+.product-image {
+    width: 60px;
+}
+
+.add-button {
+    background-color: lime;
+    border: 1px solid black;
+}
+
+.remove-button {
+    background-color: red;
+    border: 1px solid black;
+}
+
 .blur {
     filter: blur(5px);
 }
