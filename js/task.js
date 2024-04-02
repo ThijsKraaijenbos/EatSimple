@@ -193,16 +193,7 @@ function openModal() {//modal-close
     maincontainer.classList.add('blur')
     dialog.showModal();
 }
-
 function closeModal(e) {
-    const clickedItem = e.target;
-
-    if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
-        return;
-    }
-    maincontainer.classList.remove('blur')
-    dialog.close();
-}function closeModal(e) {
     const clickedItem = e.target;
 
     if (clickedItem.nodeName !== 'BUTTON' && clickedItem.className !== 'modal-close') {
