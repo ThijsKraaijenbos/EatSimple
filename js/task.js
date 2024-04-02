@@ -150,37 +150,44 @@ function openModal() {//modal-close
 //<--<img src="path_to_product_image/${productId}.jpg" alt="${productName}" class="product-image">-->
 
         const div = document.createElement("div");
-        div.classList.add("list-item");
+        div.classList.add("items-div");
+
+        const imgDiv = document.createElement('name-img');
+        const textDiv = document.createElement('text-div')
 
         const productNameP = document.createElement("p");
         productNameP.classList.add("product-name");
         productNameP.innerText = `${productName}`;
-        div.appendChild(productNameP);
+        textDiv.appendChild(productNameP);
 
-        // const productImageP = document.createElement("img");
-        // productImageP.classList.add("product-image");
-        // productImageP.src = `${productImg}`
-        // div.appendChild(productImageP);
+        const productImageP = document.createElement("img");
+        productImageP.classList.add("product-image");
+        productImageP.src = `${productImg}`
+        imgDiv.appendChild(productImageP);
 
         const productAmountP = document.createElement("p");
         productAmountP.classList.add("product-name");
         productAmountP.innerText = `Amount: ${productAmount}`;
-        div.appendChild(productAmountP);
+        textDiv.appendChild(productAmountP);
 
         const addButton = document.createElement("button");
         addButton.classList.add("add-button");
         addButton.dataset.product_id = `${productId}`;
         addButton.innerText = `+1`;
-        div.appendChild(addButton);
+        textDiv.appendChild(addButton);
 
         const removeButton = document.createElement("button");
         removeButton.classList.add("remove-button");
         removeButton.dataset.product_id = `${productId}`;
         removeButton.innerText = `-1`;
-        div.appendChild(removeButton);
+        textDiv.appendChild(removeButton);
+
+        div.appendChild(textDiv);
+        div.appendChild(imgDiv);
 
 
         cartList.appendChild(div);
+
     });
 
     // let checkOut = document.querySelector('.checkout');

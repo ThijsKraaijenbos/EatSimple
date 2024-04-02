@@ -346,6 +346,15 @@ article {
     right: 8px;
 }
 
+#cart-list{
+    display: flex;
+    flex-direction: column;
+}
+.items-div {
+    display: flex;
+    flex-direction: row;
+}
+
 .product-image {
     width: 60px;
 }
