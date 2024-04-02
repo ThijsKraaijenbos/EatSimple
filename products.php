@@ -59,7 +59,7 @@
         <div class="checkout-div">
             <a href="checkout.html" class="checkout">afrekenen</a>
         </div>
-        <a href="checkout.php" class="checkout">afrekenen</a>
+        <a href="checkout.html" class="checkout">afrekenen</a>
     </dialog>
 </main>
 
