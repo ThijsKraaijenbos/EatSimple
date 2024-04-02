@@ -29,6 +29,7 @@ function submitButton() {
 
     if (password.value == 'admin') {
         localStorage.setItem('table', table.value.toString());
+        dialog.close()
     }
 
     //localStorage.setItem('table', cardCount.toString());
