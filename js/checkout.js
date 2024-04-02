@@ -147,9 +147,9 @@ function submitList() {
     fetch("./webservice/checkout.php", {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded', // Change the content type
         },
-        body: JSON.stringify(items),
+        body: 'data=' + encodeURIComponent(JSON.stringify(items)), // Stringify and send the data under 'data' key
     })
         .then(response => response.json())
         .then(data => {
