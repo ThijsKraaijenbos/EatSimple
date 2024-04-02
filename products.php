@@ -56,9 +56,7 @@
         <button class="modal-close">❌</button>
 
         <div id="cart-list"></div>
-        <div class="checkout-div">
-            <a href="checkout.php" class="checkout">afrekenen</a>
-        </div>
+        <a href="checkout.php" class="checkout">afrekenen</a>
     </dialog>
 </main>
 
