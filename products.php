@@ -55,11 +55,10 @@
     <dialog class="products-modal">
         <button class="modal-close">❌</button>
 
-        <div id="cart-list">
-            <div class="name-img"></div>
-        </div>
+        <div id="cart-list"></div>
 
         <a href="checkout.html" class="checkout">afrekenen</a>
+
     </dialog>
 </main>
 
