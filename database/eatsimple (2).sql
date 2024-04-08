@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 apr 2024 om 09:53
+-- Gegenereerd op: 05 apr 2024 om 09:55
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -49,7 +49,6 @@ INSERT INTO `orders` (`order_id`, `table`, `order_time`) VALUES
 --
 
 CREATE TABLE `order_variant` (
-  `order_variant_id` bigint(20) NOT NULL,
   `order_id` bigint(20) NOT NULL,
   `product_id` bigint(20) NOT NULL,
   `amount` int(11) NOT NULL,
@@ -60,10 +59,28 @@ CREATE TABLE `order_variant` (
 -- Gegevens worden geëxporteerd voor tabel `order_variant`
 --
 
-INSERT INTO `order_variant` (`order_variant_id`, `order_id`, `product_id`, `amount`, `is_serverd`) VALUES
-(1, 1, 1, 2, 0),
-(2, 1, 2, 3, 0),
-(3, 2, 5, 2, 0);
+INSERT INTO `order_variant` (`order_id`, `product_id`, `amount`, `is_serverd`) VALUES
+(1, 1, 0, 0),
+(2, 1, 0, 0),
+(10, 10, 0, 0),
+(11, 11, 0, 0),
+(11, 11, 0, 0),
+(11, 11, 0, 0),
+(11, 11, 0, 0),
+(5, 4, 0, 0),
+(5, 8, 0, 0),
+(5, 10, 0, 0),
+(5, 4, 0, 0),
+(5, 8, 0, 0),
+(5, 10, 0, 0),
+(5, 4, 0, 0),
+(5, 8, 0, 0),
+(5, 10, 0, 0),
+(5, 4, 0, 0),
+(5, 27, 0, 0),
+(15, 4, 0, 0),
+(15, 12, 0, 0),
+(912, 13, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -143,12 +160,6 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexen voor tabel `order_variant`
---
-ALTER TABLE `order_variant`
-  ADD PRIMARY KEY (`order_variant_id`);
-
---
 -- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
@@ -169,12 +180,6 @@ ALTER TABLE `types`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT voor een tabel `order_variant`
---
-ALTER TABLE `order_variant`
-  MODIFY `order_variant_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `products`
