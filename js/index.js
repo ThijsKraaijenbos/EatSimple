@@ -32,6 +32,8 @@ function submitButton() {
     if (password.value == 'admin') {
         localStorage.setItem('order_id', order_id.value.toString());
         dialog.close()
+    }else if(order_id.value == 0 && password.value == "chef"){
+        window.location.href = "chef.html";
     }
 
     //localStorage.setItem('table', cardCount.toString());
@@ -53,5 +55,11 @@ function closeModal() {
 }
 
 
+
+const buttonStorage = document.getElementById("clear-storage")
+buttonStorage.addEventListener("click",clearStorage)
+function clearStorage(){
+    localStorage.removeItem('order_id');
+}
 
 
