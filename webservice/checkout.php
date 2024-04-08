@@ -10,7 +10,7 @@ try {
         $order_id = $item[0];
         $product_id = $item[1];
 
-        $stmt = $pdo->prepare("INSERT INTO order_variant (order_id, product_id, amount) VALUES ($item[0],$item[1],$item[2])");
+        $stmt = $pdo->prepare("INSERT INTO order_variant(order_id, product_id, amount) VALUES ($item[0],$item[1],$item[2])");
         // Execute the prepared statement
         $stmt->execute();
     }
