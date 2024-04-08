@@ -57,7 +57,7 @@
 
         <div id="cart-list"></div>
 
-        <a href="checkout.html" class="checkout">afrekenen</a>
+        <a href="checkout.html" class="checkout">Bestellen</a>
 
     </dialog>
 </main>

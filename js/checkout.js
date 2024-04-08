@@ -1,15 +1,18 @@
 window.addEventListener('load', init);
 
-let submit = document.querySelector('.checkout');
+let submit = document.querySelector('.bestellen');
 submit.addEventListener('click', submitList)
+let backButton = document.querySelector('#general-back-button')
+let pageId = localStorage.getItem('pageId')
 
 function init() {
     //getApi(customUrl, populateSite);
     populateSite()
+    backButton.addEventListener('click', goBack);
 }
 
 function populateSite() {
-    let cartList = document.querySelector('#cart-list');
+    let cartList = document.querySelector('.product-items');
 
     if (!cartList) {
         console.error('Cart list not found');
@@ -26,29 +29,29 @@ function populateSite() {
         const div = document.createElement("div")
         div.classList.add("list-item")
 
+        const productImageP = document.createElement("img");
+        productImageP.classList.add("product-image-checkout");
+        productImageP.src = `${productImg}`
+        div.appendChild(productImageP);
+
         const productNameP = document.createElement("p")
-        productNameP.classList.add("product-name")
+        productNameP.classList.add("product-name-checkout")
         productNameP.innerText =`${productName}`
         div.appendChild(productNameP)
 
-        // const productImageP = document.createElement("img");
-        // productImageP.classList.add("product-image");
-        // productImageP.src = `${productImg}`
-        // div.appendChild(productImageP);
-
         const productAmountP = document.createElement("p")
-        productAmountP.classList.add("product-name")
+        productAmountP.classList.add("product-amount-checkout")
         productAmountP.innerText = `Amount: ${productAmount}`
         div.appendChild(productAmountP)
 
         const addButton = document.createElement("button")
-        addButton.classList.add("add-button")
+        addButton.classList.add("add-button-checkout")
         addButton.dataset.product_id = `${productId}`
         addButton.innerText = `+1`
         div.appendChild(addButton)
 
         const removeButton = document.createElement("button")
-        removeButton.classList.add("remove-button")
+        removeButton.classList.add("remove-button-checkout")
         removeButton.dataset.product_id = `${productId}`
         removeButton.innerText = `-1`
         div.appendChild(removeButton)
@@ -59,12 +62,12 @@ function populateSite() {
 // let checkOut = document.querySelector('.checkout');
 // checkOut.addEventListener('click', openCheckOut)
 
-    let removeButtons = document.querySelectorAll('.remove-button');
+    let removeButtons = document.querySelectorAll('.remove-button-checkout');
     removeButtons.forEach(button => {
         button.addEventListener('click', removeItem);
     });
 
-    let addButtons = document.querySelectorAll('.add-button');
+    let addButtons = document.querySelectorAll('.add-button-checkout');
     addButtons.forEach(button => {
         button.addEventListener('click', addItem);
     });
@@ -121,6 +124,10 @@ function addItem(e) {
         // Re-open the modal to reflect the changes
         populateSite()
     }
+}
+
+function goBack(){
+    window.location.href = `http://localhost/EatSimple/products.php?id=${pageId}`;
 }
 
 function submitList() {

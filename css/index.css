@@ -381,3 +381,60 @@ article {
 .fade-in-out.show {
     opacity: 1;
 }
+
+/* checkout pagina begint hier */
+.product-items {
+    margin-top: 10vh;
+    padding: 0 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.product-name-checkout {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.product-items img {
+    height: 30vh;
+    width: 30vh;
+    object-position: center;
+    object-fit: cover;
+}
+
+.remove-button-checkout{
+    background-color: red;
+    height: 6vh;
+    width: 6vw;
+    border: solid black 1px;
+    margin: 1vw;
+}
+.add-button-checkout {
+    background-color: limegreen;
+    height: 6vh;
+    width: 6vw;
+    border: solid black 1px;
+    margin: 1vw;
+}
+
+.bestellen-div {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    margin-bottom: 2vh;
+}
+
+.bestellen {
+    background-color: #ffa500;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+    width: 20vw;
+    height: 10vh;
+}
