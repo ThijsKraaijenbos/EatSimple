@@ -44,7 +44,7 @@
 </head>
 <body>
 <header class="index_header">
-    <img src="img/eatsimplelogolightblue.png" alt="" id="eten-logo">
+    <a href="index.html"><img src="img/eatsimplelogolightblue.png" alt="" id="eten-logo"></a>
 </header>
 
 <main class="products-main">
