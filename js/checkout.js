@@ -6,7 +6,6 @@ let backButton = document.querySelector('#general-back-button')
 let pageId = localStorage.getItem('pageId')
 
 function init() {
-    //getApi(customUrl, populateSite);
     populateSite()
     backButton.addEventListener('click', goBack);
 }
@@ -58,9 +57,6 @@ function populateSite() {
 
         cartList.appendChild(div)
     });
-
-// let checkOut = document.querySelector('.checkout');
-// checkOut.addEventListener('click', openCheckOut)
 
     let removeButtons = document.querySelectorAll('.remove-button-checkout');
     removeButtons.forEach(button => {
@@ -117,7 +113,6 @@ function addItem(e) {
         if (cart[indexToAdd][2] === 0) {
             cart.splice(indexToAdd, 1);
         }
-
         // Save the updated cart back to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -137,16 +132,13 @@ function submitList() {
     }
 
     let order_id = JSON.parse(localStorage.getItem('order_id')) || [];
-    //let amount = JSON.parse(localStorage.getItem('amount')) || [];
+
     console.log(cart)
 
     let items = []
 
     for (let i = 0; i < cart.length; i++) {
         items.push([order_id, cart[i][0], cart[i][2]])
-        // for (let j = 0; j < cart[i][1]; j++) {
-        //
-        // }
     }
     console.log(items)
 
