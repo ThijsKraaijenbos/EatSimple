@@ -39,7 +39,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Eat Simple</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/blueyellow.css">
     <script type="text/javascript" src="js/task.js" defer></script>
 </head>
 <body>
@@ -57,7 +57,7 @@
 
         <div id="cart-list"></div>
 
-        <a href="checkout.html" class="checkout">afrekenen</a>
+        <a href="checkout.html" class="checkout">Bestellen</a>
 
     </dialog>
 </main>
