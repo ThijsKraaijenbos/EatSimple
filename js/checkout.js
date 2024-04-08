@@ -137,12 +137,13 @@ function submitList() {
     }
 
     let order_id = JSON.parse(localStorage.getItem('order_id')) || [];
+    //let amount = JSON.parse(localStorage.getItem('amount')) || [];
     console.log(cart)
 
     let items = []
 
     for (let i = 0; i < cart.length; i++) {
-        items.push([order_id, cart[i][0]])
+        items.push([order_id, cart[i][0], cart[i][2]])
         // for (let j = 0; j < cart[i][1]; j++) {
         //
         // }
