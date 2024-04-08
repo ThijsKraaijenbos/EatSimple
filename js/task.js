@@ -6,9 +6,12 @@ let container; // Roshan changed
 let main;
 let dialog;
 let maincontainer = document.querySelector('#container-producten');
+let bestelbutton = document.querySelector('.checkout');
+const urlParams = new URLSearchParams(window.location.search)
 
 function init() {
     getApi(customUrl, populateSite);
+    bestelbutton.addEventListener('click', storeId)
 }
 
 function getApi(url, nextFunction) {
@@ -153,7 +156,7 @@ function openModal() {//modal-close
         div.classList.add("items-div");
 
         const imgDiv = document.createElement('name-img');
-        const textDiv = document.createElement('text-div')
+        const textDiv = document.createElement('text-div');
 
         const productNameP = document.createElement("p");
         productNameP.classList.add("product-name");
@@ -162,7 +165,7 @@ function openModal() {//modal-close
 
         const productImageP = document.createElement("img");
         productImageP.classList.add("product-image");
-        productImageP.src = `${productImg}`
+        productImageP.src = `${productImg}`;
         imgDiv.appendChild(productImageP);
 
         const productAmountP = document.createElement("p");
@@ -185,9 +188,7 @@ function openModal() {//modal-close
         div.appendChild(textDiv);
         div.appendChild(imgDiv);
 
-
         cartList.appendChild(div);
-
     });
 
     // let checkOut = document.querySelector('.checkout');
@@ -268,6 +269,11 @@ function addItem(e) {
         // Re-open the modal to reflect the changes
         openModal();
     }
+}
+
+function storeId(){
+    const id = urlParams.get('id');
+    localStorage.setItem('pageId', id)
 }
 
 function errorMessage(message) {
