@@ -26,16 +26,16 @@ function populateSite(data) {
 
         let productButton = document.createElement("button")
         productButton.innerText =`Klaar`
+        productButton.dataset.index = data[i].order_variant_id
+        productButton.addEventListener('click', orderReady)
         chefList.appendChild(productButton)
     }
-
-
-
-
 }
-
-
 
 function errorMessage(data) {
     console.log(data);
+}
+
+function orderReady() {
+
 }
