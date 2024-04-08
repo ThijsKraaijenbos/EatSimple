@@ -4,15 +4,10 @@ require 'database.php';
 
 //Based on the existence of the GET parameter, 1 of the 2 functions will be called
 $stmt = '';
-
-    $stmt = $pdo->prepare("SELECT * FROM orders
-	INNER JOIN
-    order_variant ON orders.order_id = order_variant.order_id
-    INNER JOIN
-    types ON types.type_id = order_variant.product_id
-    WHERE order_variant.is_serverd = 0");
-
-
+if ($_GET['id'] != 'null') {
+    $id = $_GET['id'];
+    $stmt = $pdo->prepare("UPDATE `order_variant` SET `is_serverd`= 1 WHERE order_variant_id =" . $id);
+}
 
 // Execute the prepared statement
 $stmt->execute();

@@ -2,11 +2,11 @@ window.addEventListener('load', init);
 
 let chefList = document.querySelector('.main');
 function init() {
-    getApi(populateSite);
+    getApi('./webservice/data.php', populateSite);
 }
 
-function getApi(nextFunction) {
-    fetch('./webservice/data.php')
+function getApi(url, nextFunction) {
+    fetch(url)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error (${response.status}): ${response.statusText}`);
@@ -36,6 +36,14 @@ function errorMessage(data) {
     console.log(data);
 }
 
-function orderReady() {
+function orderReady(e) {
+    console.log(e.target.dataset.index)
+    console.log('./webservice/editChef.php?id=' + e.target.dataset.index)
+    getApi('./webservice/editChef.php?id=' + e.target.dataset.index, next);//"webservice/actions.php?id=" + id;
+    window.location.href = 'chef.html';
+    window.close();
+}
 
+function next(data) {
+    console.log('item removed')
 }
