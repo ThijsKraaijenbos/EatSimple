@@ -358,17 +358,6 @@ article {
     cursor: pointer;
 }
 
-.checkout {
-    background-color: #ffa500;
-    color: white;
-    text-decoration: none;
-    padding: 3px;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-}
-
 #cart-list{
     display: flex;
     flex-direction: column;
@@ -376,10 +365,19 @@ article {
 .items-div {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    background-color: #A2D5F2;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3px;
+    gap: 8px;
 }
 
 .product-image {
-    width: 60px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position:center ;
 }
 
 .add-button {
@@ -391,6 +389,16 @@ article {
     background-color: red;
     border: 1px solid black;
 }
+
+.checkout {
+    background-color: #ffa500;
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+    margin-left: 75%;
+}
+
 .products-backbutton {
     display: flex;
     justify-content: center;
@@ -408,4 +416,88 @@ article {
 
 .fade-in-out.show {
     opacity: 1;
+}
+
+/* checkout.html begint hier */
+
+.product-items {
+    margin-top: 10vh;
+    padding: 0 12vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A2D5F2;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-shadow: 0px 10px 12px 2px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+}
+
+.product-name-checkout {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.product-items img {
+    height: 30vh;
+    width: 30vh;
+    object-position: center;
+    object-fit: cover;
+}
+
+.remove-button-checkout{
+    background-color: red;
+    height: 6vh;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+.remove-button-checkout:hover {
+    background-color: darkred;
+    box-shadow: 1px 1px 0px black;
+}
+
+.add-button-checkout {
+    background-color: limegreen;
+    height: 6vh;
+    width: 100%;
+    border: solid black 1px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.add-button-checkout:hover {
+    background-color: #00b400;
+
+}
+.bestellen-div {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    margin-bottom: 2vh;
+}
+
+.bestellen {
+    background-color: #ffa500;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+    width: 20vw;
+    height: 10vh;
+}
+
+.bestellen:hover{
+    background-color: #fff924;
+    color: black;
+    box-shadow: 1px 1px 0px black;
 }

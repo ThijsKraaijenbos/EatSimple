@@ -40,7 +40,7 @@ function populateSite() {
 
         const productAmountP = document.createElement("p")
         productAmountP.classList.add("product-amount-checkout")
-        productAmountP.innerText = `Amount: ${productAmount}`
+        productAmountP.innerText = `Hoeveelheid: ${productAmount}`
         div.appendChild(productAmountP)
 
         const addButton = document.createElement("button")
