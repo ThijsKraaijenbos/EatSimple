@@ -179,7 +179,7 @@ function openModal() {//modal-close
 
         const productAmountP = document.createElement("p");
         productAmountP.classList.add("product-name");
-        productAmountP.innerText = `Amount: ${productAmount}`;
+        productAmountP.innerText = `Hoeveelheid: ${productAmount}`;
         textDiv.appendChild(productAmountP);
 
         const addButton = document.createElement("button");

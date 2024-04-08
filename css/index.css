@@ -366,10 +366,10 @@ article {
 }
 
 .product-items img {
-    height: 30vh;
-    width: 30vh;
-    object-position: center;
     object-fit: cover;
+    object-position: center;
+    width:250px;
+    height:250px;
 }
 
 .remove-button-checkout{
