@@ -22,11 +22,24 @@ function populateSite(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement('div');
+        let ul = document.createElement('ul')
+
+        ul.classList.add('chef-ul')
         div.classList.add('chef-div');
 
+        let tableNumberP = document.createElement("h2");
+        tableNumberP.innerText = `Tafel: ${data[i].table}`;
+        div.appendChild(tableNumberP);
+
         let productNameP = document.createElement("p");
-        productNameP.innerText = `Tafel: ${data[i].table} - Product naam: ${data[i].name} - Aantal: ${data[i].amount}`;
-        div.appendChild(productNameP);
+        productNameP.innerText = `Product naam: ${data[i].name}`;
+        ul.appendChild(productNameP);
+
+        let productAmountP = document.createElement("p");
+        productAmountP.innerText = `Aantal: ${data[i].amount}`;
+        ul.appendChild(productAmountP);
+
+        div.appendChild(ul);
 
         let productButton = document.createElement("button");
         productButton.innerText = `Klaar`;
@@ -35,8 +48,11 @@ function populateSite(data) {
         div.appendChild(productButton);
 
         chefList.appendChild(div);
+
     }
 }
+
+//
 
 function errorMessage(data) {
     console.log(data);

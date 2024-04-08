@@ -535,3 +535,10 @@ article {
     background-color: #fff924;
     box-shadow: 1px 1px 0px 0px black;
 }
+
+.chef-ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
