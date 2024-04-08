@@ -66,8 +66,17 @@ function populateSite(products) {
         productContainer.appendChild(productButton);
         container.appendChild(productContainer);
         main.appendChild(container);
-
     }
+
+    const backButtonDiv = document.createElement("div")
+    backButtonDiv.classList.add("products-backbutton")
+    const backButton = document.createElement("a")
+    backButton.href = "types.html"
+    backButton.id = "general-back-button"
+    backButton.innerText = " ← "
+    backButtonDiv.appendChild(backButton)
+    main.appendChild(backButtonDiv)
+
 }
 
 
