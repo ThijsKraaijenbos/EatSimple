@@ -122,7 +122,7 @@ function addItem(e) {
 }
 
 function goBack(){
-    window.location.href = `http://localhost/EatSimple/products.php?id=${pageId}`;
+    window.location.href = `products.php?id=${pageId}`;
 }
 
 function submitList() {

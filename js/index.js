@@ -19,7 +19,6 @@ const init = () => {
 function openAdminPanel() {
     if (localStorage.getItem('order_id')){
         window.location.href = 'types.html';
-        window.close();
     } else {
         let closeButton = document.querySelector('.modal-close')
         closeButton.addEventListener('click', closeModal)
