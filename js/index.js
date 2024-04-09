@@ -1,10 +1,8 @@
 window.addEventListener("load", () => init())
 
 let home_page_button = document.querySelector('.home_page_button')
-home_page_button.addEventListener('click', openAdminPanel)
 
 let submit = document.querySelector('.submit')
-submit.addEventListener('click', submitButton)
 
 let dialog = document.querySelector('.admin-modal')
 let order_id = document.querySelector('#order_id')
@@ -14,11 +12,13 @@ let password = document.querySelector('#password')
 //Init functie
 const init = () => {
     console.log("Alle elementen zijn geladen")
+    home_page_button.addEventListener('click', openAdminPanel)
+    submit.addEventListener('click', submitButton)
 }
 
 function openAdminPanel() {
     if (localStorage.getItem('order_id')){
-        window.location.href = 'types.html';
+        window.location.href = "types.html";
     } else {
         let closeButton = document.querySelector('.modal-close')
         closeButton.addEventListener('click', closeModal)
